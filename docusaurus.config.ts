@@ -30,7 +30,7 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
-    format: 'md',
+    format: 'detect',
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
