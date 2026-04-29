@@ -41,7 +41,8 @@
 
   --ifm-toc-border-color: rgba(0, 0, 0, 0.08);
 
-  --ifm-container-width-xl: 920px;
+  --ifm-container-width: 1100px;
+  --ifm-container-width-xl: 1100px;
 }
 
 [data-theme='dark'] {
@@ -79,7 +80,7 @@
 
 /* Типографика основного текста. */
 article {
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -162,35 +163,31 @@ article {
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* Оглавление справа — компактное. */
-.table-of-contents {
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.table-of-contents__link {
-  color: var(--ifm-color-primary-light);
-}
-
-.table-of-contents__link--active {
-  color: var(--ifm-color-primary);
-  font-weight: 500;
-}
-
-/* Скрыть боковую панель — у нас одна страница. */
-.theme-doc-sidebar-container {
+/* Скрыть обе боковые панели — содержание занимает всю доступную ширину. */
+.theme-doc-sidebar-container,
+.theme-doc-toc-desktop,
+.theme-doc-toc-mobile {
   display: none !important;
 }
 
-.theme-doc-toc-mobile {
-  display: none;
+/* Документ занимает всю доступную ширину; внутренний article ограничен
+   собственным max-width 920px и центрирован. */
+[class^='docMainContainer'],
+[class*=' docMainContainer'] {
+  max-width: none !important;
+  margin: 0 auto !important;
+  width: 100% !important;
 }
 
-@media (min-width: 997px) {
-  .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
-    margin-left: 0 !important;
-    max-width: none !important;
-  }
+[class^='docItemCol'],
+[class*=' docItemCol'] {
+  max-width: none !important;
+  flex: 1 !important;
+}
+
+[class^='docItemContainer'],
+[class*=' docItemContainer'] {
+  max-width: none !important;
 }
 
 /* KaTeX — корректный размер инлайновых формул. */
