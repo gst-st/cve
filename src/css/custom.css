@@ -1,0 +1,210 @@
+/**
+ * Минимальный когерентный стиль для документа КВИ-архитектуры.
+ * Спокойная сдержанная палитра, читаемая типографика, ничего лишнего.
+ */
+
+:root {
+  --ifm-color-primary: #2d3748;
+  --ifm-color-primary-dark: #1a202c;
+  --ifm-color-primary-darker: #171923;
+  --ifm-color-primary-darkest: #0d1117;
+  --ifm-color-primary-light: #4a5568;
+  --ifm-color-primary-lighter: #718096;
+  --ifm-color-primary-lightest: #a0aec0;
+
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Courier New', monospace;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.65;
+
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.65rem;
+  --ifm-h3-font-size: 1.25rem;
+
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-line-height: 1.3;
+
+  --ifm-code-font-size: 92%;
+  --ifm-code-background: rgba(0, 0, 0, 0.04);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  --ifm-link-color: #2c5282;
+  --ifm-link-hover-color: #1a365d;
+  --ifm-link-decoration: none;
+  --ifm-link-hover-decoration: underline;
+
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  --ifm-navbar-height: 56px;
+
+  --ifm-toc-border-color: rgba(0, 0, 0, 0.08);
+
+  --ifm-container-width-xl: 920px;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #cbd5e0;
+  --ifm-color-primary-dark: #a0aec0;
+  --ifm-color-primary-darker: #718096;
+  --ifm-color-primary-darkest: #4a5568;
+  --ifm-color-primary-light: #e2e8f0;
+  --ifm-color-primary-lighter: #edf2f7;
+  --ifm-color-primary-lightest: #f7fafc;
+
+  --ifm-code-background: rgba(255, 255, 255, 0.06);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+
+  --ifm-link-color: #90cdf4;
+  --ifm-link-hover-color: #bee3f8;
+
+  --ifm-navbar-background-color: #1a202c;
+  --ifm-navbar-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Заголовок навигации без иконки и без декора. */
+.navbar__brand {
+  margin-right: 0;
+}
+
+.navbar__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.navbar__logo {
+  display: none;
+}
+
+/* Типографика основного текста. */
+article {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.markdown {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.markdown h1 {
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.markdown h2 {
+  margin-top: 2.5rem;
+  letter-spacing: -0.015em;
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.markdown p {
+  margin-bottom: 1.1em;
+}
+
+.markdown code {
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+.markdown blockquote {
+  border-left: 3px solid var(--ifm-color-primary-lighter);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--ifm-color-primary-light);
+}
+
+/* Спокойные admonition-блоки. */
+.theme-admonition {
+  border-radius: 6px;
+  border-left-width: 3px;
+}
+
+.theme-admonition-tip {
+  --ifm-alert-background-color: rgba(45, 55, 72, 0.04);
+  --ifm-alert-border-color: var(--ifm-color-primary);
+  --ifm-alert-foreground-color: var(--ifm-color-primary-darker);
+}
+
+[data-theme='dark'] .theme-admonition-tip {
+  --ifm-alert-background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Таблицы — минималистичные. */
+.markdown table {
+  display: table;
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 1px solid var(--ifm-toc-border-color);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown table th {
+  background: rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .markdown table th {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Оглавление справа — компактное. */
+.table-of-contents {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-color-primary-light);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
+
+/* Скрыть боковую панель — у нас одна страница. */
+.theme-doc-sidebar-container {
+  display: none !important;
+}
+
+.theme-doc-toc-mobile {
+  display: none;
+}
+
+@media (min-width: 997px) {
+  .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
+    margin-left: 0 !important;
+    max-width: none !important;
+  }
+}
+
+/* KaTeX — корректный размер инлайновых формул. */
+.katex {
+  font-size: 1.05em;
+}
+
+/* Подвал — тихий. */
+.footer {
+  border-top: 1px solid var(--ifm-toc-border-color);
+  padding: 2rem 0;
+}
+
+.footer--dark {
+  background: var(--ifm-navbar-background-color);
+  color: var(--ifm-color-primary-light);
+}
